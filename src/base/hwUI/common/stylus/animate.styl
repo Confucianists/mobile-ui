@@ -1,0 +1,229 @@
+// 向上移动
+@keyframes slideUp
+  from
+    transform: translate3d(0, 100%, 0)
+  to
+    transform: translate3d(0, 0, 0)
+
+@keyframes slideDown
+  from
+    transform: translate3d(0, 0, 0)
+  to
+    transform: translate3d(0, 100%, 0)
+
+.slidY-enter-active
+.slidY-enter
+  animation: slideUp ease .3s forwards
+.slidY-leave-active
+.slidY-leave-to
+  animation: slideDown ease .3s forwards
+
+// 向下移动
+@keyframes slideYDown
+  from
+    transform: translate3d(0, -100%, 0)
+  to
+    transform: translate3d(0, 0, 0)
+
+@keyframes slideYUp
+  from
+    transform: translate3d(0, 0, 0)
+  to
+    transform: translate3d(0, -100%, 0)
+.slideYDown-enter-active
+  animation: slideYDown ease .3s forwards
+.slideYDown-leave-active
+.slideYDown-leave-to
+  animation: slideYUp ease .3s forwards
+
+// 向左移动
+@keyframes slideLeft
+  from
+    transform: translate3d(100%, 0, 0)
+  to
+    transform: translate3d(0, 0, 0)
+
+@keyframes slideRight
+  from
+    transform: translate3d(0, 0, 0)
+  to
+    transform: translate3d(100%, 0, 0)
+
+.slidX-enter-active
+.slidX-enter
+  animation: slideLeft ease .3s forwards
+.slidX-leave-active
+.slidX-leave-to
+  animation: slideRight ease .3s forwards
+// 向右移动
+@keyframes slideLeftR
+  from
+    transform: translate3d(-100%, 0, 0)
+  to
+    transform: translate3d(0, 0, 0)
+
+@keyframes slideRightR
+  from
+    transform: translate3d(0, 0, 0)
+  to
+    transform: translate3d(-100%, 0, 0)
+
+.slidR-enter-active
+.slidR-enter
+  animation: slideLeftR ease .3s forwards
+.slidR-leave-active
+.slidR-leave-to
+  animation: slideRightR ease .3s forwards
+
+
+// 横向弹出
+@keyframes slideSmllXStart
+  from
+    transform: translate3d(0, 0, 0)
+    opacity: 0
+  to
+    transform: translate3d(-63px, -6px, 0)
+    opacity: 1
+
+@keyframes slideSmllXEnd
+  from
+    transform: translate3d(-63px,-6px, 0)
+    opacity: 1
+  to
+    transform: translate3d(0, 0, 0)
+    opacity: 0
+
+.slideSmllX-enter-active
+.slideSmllX-enter
+  animation: slideSmllXStart ease .3s forwards
+.slideSmllX-leave-active
+.slideSmllX-leave-to
+  animation: slideSmllXEnd ease .3s forwards
+
+// 横向弹出
+@keyframes slideSmllYStart
+  from
+    transform: translate3d(0, 0, 0)
+    opacity: 0
+  to
+    transform: translate3d(-21px, -62px, 0)
+    opacity: 1
+@keyframes slideSmllYEnd
+  from
+   transform: translate3d(-21px, -62px, 0)
+   opacity: 1
+  to
+    transform: translate3d(0, 0, 0)
+    opacity: 0
+.slideSmllY-enter-active
+.slideSmllY-enter
+  animation: slideSmllYStart ease .3s forwards
+.slideSmllY-leave-active
+.slideSmllY-leave-to
+  animation: slideSmllYEnd ease .3s forwards
+
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes fadeOut
+  from
+    opacity: 1
+  to
+    opacity: 0
+
+.fade-enter-active
+.fade-enter
+  animation: fadeIn ease .3s forwards
+.fade-leave-active
+.fade-leave-to
+  animation: fadeOut ease .3s forwards
+
+.child-view
+  position: absolute
+  width:100%
+  transition: all .5s cubic-bezier(.55,0,.1,1)
+.slide-left-enter, .slide-right-leave-active
+  opacity: 0
+  -webkit-transform: translate(50%, 0)
+  transform: translate(50%, 0)
+.slide-left-leave-active, .slide-right-enter
+  opacity: 0;
+  -webkit-transform: translate(-50%, 0)
+  transform: translate(-50%, 0)
+
+@keyframes fadeInRight
+  from
+    opacity: 1
+    transform: translate3d(100%, 0, 0)
+  to
+    opacity: 1
+    transform: none
+@keyframes fadeOutRight
+  from
+    opacity: 1
+    transform: none
+  to
+    opacity: 1
+    transform: translate3d(100%, 0, 0)
+@keyframes fadeInLeft
+  from
+    opacity: 1;
+    transform: translate3d(-100%, 0, 0);
+  to
+    opacity: 1;
+    transform: none;
+@keyframes fadeOutLeft
+  from
+    opacity: 1;
+    transform: none;
+  to
+    opacity: 1;
+    transform: translate3d(-100%, 0, 0);
+.fadeInRight-enter-active
+  animation: fadeInRight ease .7s forwards
+.fadeInRight-leave-active
+  animation: fadeOutLeft ease .7s forwards
+.fadeInLeft-enter-active
+  animation: fadeInLeft ease .7s forwards
+.fadeInLeft-leave-active
+  animation: fadeOutRight ease .7s forwards
+
+@keyframes fadeInSmallRight
+  from
+    opacity: 0
+    transform: translate3d(100%, 0, 0)
+  to
+    opacity: 1
+    transform: none
+@keyframes fadeOutSmallRight
+  from
+    opacity: 1
+    transform: none
+  to
+    opacity: 0
+    transform: translate3d(100%, 0, 0)
+@keyframes fadeInSmallLeft
+  from
+    opacity: 0
+    transform: translate3d(-100%, 0, 0);
+  to
+    opacity: 1
+    transform: none;
+@keyframes fadeOutSmallLeft
+  from
+    opacity: 1
+    transform: none;
+  to
+    opacity: 0
+    transform: translate3d(-100%, 0, 0);
+.fadeInSmallRight-enter-active
+  animation: fadeInSmallRight ease .5s forwards
+.fadeInSmallRight-leave-active
+  animation: fadeOutSmallLeft ease .5s forwards
+.fadeInSmallLeft-enter-active
+  animation: fadeInSmallLeft ease .5s forwards
+.fadeInSmallLeft-leave-active
+  animation: fadeOutSmallRight ease .5s forwards

@@ -1,0 +1,90 @@
+f-box(arguments)
+  width cp(arguments)
+  height cp(arguments)
+f-size()
+  font-size cp(arguments)
+f-fix-b()
+  position fixed
+  left 0
+  right 0
+  bottom 0
+f-w()
+  width arguments
+f-h()
+  height arguments
+f-cb()
+  &:after
+    content '.'
+    clear both
+    height 0
+    overflow hidden
+    visibility hidden
+    display block
+f-pr()
+    float right
+// switch
+$duration = .4s
+f-switch()
+  margin-top cp(20)
+  width cp(80)
+  height: cp(50)
+  position: relative;
+  border: 1px solid #dfdfdf;
+  background-color: #fdfdfd;
+  box-shadow: #dfdfdf 0 0 0 0 inset;
+  border-radius cp(40)
+  background-clip: content-box;
+  display: inline-block;
+  -webkit-appearance: none;
+  // user-select: none;
+  outline: none;
+  &:before {
+    content: '';
+    width:  cp(46)
+    height: cp(46)
+    position: absolute;
+    top: 0px;
+    left: 0;
+    border-radius cp(40)
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  }
+  &:checked {
+    border-color: $color-blue
+    box-shadow: $color-blue 0 0 0 16px inset;
+    background-color: $color-blue
+    &:before {
+      left: cp(28)
+    }
+  }
+  &.mui-switch-animbg {
+    transition: background-color ease $duration;
+    &:before {
+      transition: left 0.3s;
+    }
+    &:checked {
+      box-shadow: #dfdfdf 0 0 0 0 inset;
+      background-color: $checkedColor;
+      transition: border-color $duration, background-color ease $duration;
+      &:before {
+        transition: left 0.3s;
+      }
+    }
+
+  }
+  &.mui-switch-anim {
+    transition: border cubic-bezier(0, 0, 0, 1) $duration, box-shadow cubic-bezier(0, 0, 0, 1) $duration;
+    &:before {
+      transition: left 0.3s;
+    }
+    &:checked {
+      box-shadow: $color-blue 0 0 0 16px inset;
+      background-color: $color-blue;
+      transition: border ease $duration, box-shadow ease $duration, background-color ease $duration*3;
+      &:before {
+        transition: left 0.3s;
+      }
+    }
+
+  }
+

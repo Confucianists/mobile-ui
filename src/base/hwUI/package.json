@@ -1,0 +1,15 @@
+{
+  "name": "hwui",
+  "version": "1.0.0",
+  "description": "vue+apicloud 移动端app混合开发框架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "apicloud",
+    "vue"
+  ],
+  "author": "Confucianists",
+  "license": "ISC"
+}

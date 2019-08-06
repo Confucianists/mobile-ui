@@ -1,0 +1,160 @@
+// 背景图片
+bg-image($url)
+  background-image: url($url + "@2x.png")
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+    background-image: url($url + "@3x.png")
+
+// 计算px
+cp(x)
+  (x/2)px
+
+// 不换行
+no-wrap()
+  text-overflow: ellipsis
+  overflow: hidden
+  white-space: nowrap
+
+// 扩展点击区域
+extend-click()
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    top: -10px
+    left: -10px
+    right: -10px
+    bottom: -10px
+
+// 统一边距
+edge()
+  margin-left: cp(30)
+  margin-right: cp(30)
+
+edge-top()
+  margin-top: cp(30)
+
+edge-bottom()
+  margin-bottom: cp(30)
+
+// 圆角
+radius()
+  border-radius cp(8)
+//边框 上
+setTopLine($border-color)
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid $border-color;
+  color: $border-color;
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+//边框 下
+setBottomLine($border-color)
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid $border-color;
+  color: $border-color;
+  transform-origin: 0 100%;
+  transform: scaleY(0.5);
+//边框 左
+setLeftLine($border-color)
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-left: 1px solid $border-color;
+  color: $border-color;
+  transform-origin: 0 0;
+  transform: scaleX(0.5);
+//边框 右
+setRightLine($border-color)
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0; 
+  width: 1px;
+  bottom: 0;
+  border-right: 1px solid $border-color;
+  color: $border-color;
+  transform-origin: 100% 0;
+  transform: scaleX(0.5);
+// 图icon
+setImg($width, $height)
+  width: cp($width)
+  height: cp($height)
+  overflow: hidden
+  img
+    width: 100%
+    height: 100%
+// 超出部分三个点
+overDots()
+  overflow:hidden;
+  word-break:keep-all;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+//清除浮动
+clearfix()
+  *zoom: 1;
+  &:after
+    display: block
+    clear: both
+    content: ''
+    visibility: hidden
+    height: 0
+//1px分隔线 div
+fenge($color)
+  background: -webkit-linear-gradient(top, transparent, transparent 50%, $color 50%) 0 top no-repeat
+  background-size: 100% 1px
+//响应式图片
+bg-image($url)
+  background-image: url($url + "@2x.png")
+  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)
+    background-image: url($url + "@3x.png")
+
+//vw
+vw($pxsize)
+  ($pxsize/750)*100vw
+
+//p标签只显示固定行数
+multiline($rows)
+  display: -webkit-box;
+  -webkit-line-clamp: $rows
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+//p行数
+pline($rows)
+  word-break: break-all;
+  word-wrap: break-word;
+  overflow: hidden;
+  white-space:pre-wrap
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $rows; 
+  -webkit-box-orient: vertical;
+//超出隐藏
+overHidden()
+   display: block;
+   word-break: break-all;
+   word-wrap: break-word;
+   overflow: hidden;
+   white-space:pre-wrap
+//left inline-block
+inlineBlockLeft($pxsize)
+   display: inline-block
+   width ($pxsize/750)*100vw
+   text-align: left
+//right inline-block
+inlineBlockRight($pxsize)
+   display: inline-block
+   width ($pxsize/750)*100vw
+   text-align: right 

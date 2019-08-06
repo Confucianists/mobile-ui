@@ -1,0 +1,74 @@
+@import "variable.styl"
+@import "mixin.styl"
+
+body, html
+  line-height: 1
+  font-family: 'PingFang-SC-Medium','PingFang SC', 'STHeitiSC-Light', 'Helvetica-Light', arial, sans-serif, 'Droid Sans Fallback'
+  // user-select: none
+  -webkit-tap-highlight-color: transparent
+  background: $color-background
+  color: $color-text
+
+input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  background-color: transparent;
+  font-size: inherit;
+  color: inherit;
+  height: 1.47em;
+  line-height: 1.4705;
+}
+
+.blue-btn
+  width: cp(180)
+  height: cp(56)
+  line-height: cp(56)
+  background: $color-blue
+  border-radius: cp(28)
+  font-size: cp(28)
+  color #fff
+.bottomLine
+  position: relative
+  &:after
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1px solid $color-bg-hui;
+    color: $color-bg-hui;
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    z-index: 2;
+
+.aboveLine
+  position: relative
+  &:before
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px;
+    border-top: 1px solid $color-bg-hui;
+    color: $color-bg-hui;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    z-index: 2;
+
+.box-bg
+  background-color $color-hui-bg
+  height: 100%
+  position: fixed
+  width: 100%
+  top 0
+  left 0
+  z-index -1
+
